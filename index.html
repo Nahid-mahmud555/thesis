@@ -9,17 +9,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 
-/* =====================================================================
-   ছবির path এখানে বসান — নিচের তালিকায় থাকা প্রতিটা ফাইলনেম আপনার নিজের
-   ছবি দিয়ে বদলে দিলেই ডিজাইন সম্পূর্ণ হয়ে যাবে। কোনো path কাজ না করলে
-   অটোমেটিক একটা সুন্দর প্লেসহোল্ডার দেখাবে, ভাঙা ছবির মতো দেখাবে না।
-
-   1) images/brain-illustration.png   -> বাম প্যানেলের ব্রেইন ইলাস্ট্রেশন
-   2) images/profile.jpg              -> প্রোফাইল ছবি (গোল)
-   3) images/post-research.jpg        -> প্রথম কার্ডের কভার ছবি
-   4) images/post-academic.jpg        -> দ্বিতীয় কার্ডের কভার ছবি
-   ===================================================================== */
-
 :root{
   --ink:#141a2e;
   --navy:#0e1630;
@@ -82,16 +71,19 @@ body{
   width:100%;
   border-radius:10px;
   overflow:hidden;
-  background:rgba(246,241,230,.06);
-  border:1px dashed rgba(246,241,230,.28);
+  background:transparent;
+  border:none;
   display:flex;
   align-items:center;
   justify-content:center;
 }
 .img-slot img{
-  width:100%;height:100%;
+  width:100%;
+  height:100%;
   object-fit:cover;
   display:block;
+  mix-blend-mode: multiply; /* ব্যাকগ্রাউন্ডের সাথে সুন্দরভাবে মিশে যাওয়ার জন্য */
+  opacity: 0.92;            /* হালকা ব্লেন্ড লুক দেওয়ার জন্য */
 }
 .img-slot .slot-label{
   display:none;
@@ -106,7 +98,13 @@ body{
 .img-slot.empty .slot-label{ display:flex; }
 .img-slot .slot-label svg{ width:26px; height:26px; opacity:.6; }
 
-.brain-slot{ height:150px; }
+/* ব্রেইন ছবির বক্সের সাইজ প্রফেশনালভাবে বড় করা হলো */
+.brain-slot{ 
+  height: 220px; 
+  background: rgba(0,0,0,0.12);
+  border-radius: 12px;
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.2);
+}
 
 .note-wrap{
   position:relative;
@@ -140,7 +138,7 @@ body{
 }
 .profile-slot .slot-label{ font-size:0; }
 .profile-slot .slot-label svg{ width:18px;height:18px; }
-.profile-slot img{ border-radius:50%; }
+.profile-slot img{ border-radius:50%; mix-blend-mode: normal; opacity: 1; }
 
 .journal-body{ margin-top:.1rem; }
 .journal-body h1{
@@ -245,6 +243,7 @@ body{
   background:var(--paper-dim);
   border:1px dashed var(--line);
 }
+.post-img-slot img { mix-blend-mode: normal; opacity: 1; }
 .post-img-slot .slot-label{ color:#a89f8c; }
 .post-img-slot .slot-label svg{ width:22px;height:22px; }
 
