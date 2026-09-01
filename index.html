@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thesis Papers</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:#f7f4ef;
+    overflow-x:hidden;
+}
+
+.container{
+    display:grid;
+    grid-template-columns:38% 32% 30%;
+    min-height:100vh;
+}
+
+/* ===================
+   LEFT SECTION
+=================== */
+
+.left{
+    position:relative;
+    overflow:hidden;
+    background:
+    linear-gradient(
+    rgba(0,0,0,.20),
+    rgba(0,0,0,.65)),
+    url("images/paper-bg.jpg");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.logo{
+    position:absolute;
+    top:35px;
+    left:40px;
+    font-size:24px;
+    font-weight:800;
+    text-transform:uppercase;
+    border-bottom:4px solid #111;
+    padding-bottom:4px;
+}
+
+.brain{
+    width:420px;
+    position:absolute;
+    top:80px;
+    left:20px;
+    z-index:2;
+}
+
+.highlight{
+    position:absolute;
+    left:85px;
+    top:480px;
+    font-size:60px;
+    font-weight:700;
+    font-family:Georgia, serif;
+    transform:rotate(-7deg);
+    color:#111;
+}
+
+.highlight span{
+    background:#4657ff;
+    color:#000;
+    padding:4px 18px;
+}
+
+.profile-box{
+    position:absolute;
+    bottom:60px;
+    left:50px;
+    color:white;
+}
+
+.profile-img{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    border:5px solid rgba(255,255,255,.2);
+    object-fit:cover;
+}
+
+.profile-box h1{
+    margin-top:18px;
+    font-size:60px;
+    font-weight:700;
+}
+
+.profile-box p{
+    margin-top:12px;
+    max-width:380px;
+    line-height:1.8;
+    font-size:18px;
+}
+
+.socials{
+    display:flex;
+    gap:15px;
+    margin-top:30px;
+}
+
+.socials button{
+    border:none;
+    cursor:pointer;
+    color:white;
+    padding:14px 25px;
+    border-radius:8px;
+    font-weight:600;
+}
+
+.fb{
+    background:#173f88;
+}
+
+.tw{
+    background:#11a8ff;
+}
+
+/* ===================
+   CENTER SECTION
+=================== */
+
+.center{
+    background:#f5f1eb;
+    padding:30px;
+    overflow-y:auto;
+}
+
+.menu{
+    display:flex;
+    justify-content:flex-end;
+    font-size:28px;
+    margin-bottom:20px;
+}
+
+.card{
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    margin-bottom:25px;
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card-image{
+    height:220px;
+    position:relative;
+}
+
+.card-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.badge{
+    position:absolute;
+    top:18px;
+    right:18px;
+    color:white;
+    font-size:13px;
+    padding:8px 14px;
+    border-radius:30px;
+}
+
+.travel{
+    background:#00c4a7;
+}
+
+.life{
+    background:#f3a300;
+}
+
+.music{
+    background:#7d4dff;
+}
+
+.card-content{
+    padding:25px;
+}
+
+.card-content h2{
+    font-size:32px;
+    line-height:1.3;
+    margin-bottom:15px;
+}
+
+.card-content p{
+    color:#666;
+    line-height:1.7;
+}
+
+.read{
+    margin-top:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.read a{
+    color:#333;
+    font-weight:600;
+}
+
+.arrow{
+    font-size:28px;
+}
+
+/* ===================
+   LOGIN SECTION
+=================== */
+
+.right{
+    background:#fbf8f4;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:50px;
+}
+
+.login-box{
+    width:100%;
+    max-width:420px;
+}
+
+.login-box h1{
+    font-size:56px;
+    color:#172033;
+    margin-bottom:15px;
+}
+
+.login-box p{
+    color:#666;
+    line-height:1.8;
+    margin-bottom:35px;
+}
+
+.input{
+    width:100%;
+    padding:18px;
+    border:1px solid #ddd;
+    border-radius:12px;
+    margin-bottom:15px;
+    font-size:16px;
+}
+
+.options{
+    display:flex;
+    justify-content:space-between;
+    margin:20px 0;
+    font-size:14px;
+}
+
+.login-btn{
+    width:100%;
+    border:none;
+    padding:18px;
+    border-radius:12px;
+    color:white;
+    background:
+    linear-gradient(
+    135deg,
+    #0a1730,
+    #071120);
+    font-size:18px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.divider{
+    text-align:center;
+    margin:25px 0;
+    color:#999;
+}
+
+.social-btn{
+    width:100%;
+    border:1px solid #ddd;
+    background:white;
+    padding:18px;
+    border-radius:12px;
+    margin-bottom:15px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.guest{
+    margin-top:20px;
+    border:1px solid orange;
+    color:orange;
+    background:white;
+}
+
+.signup{
+    text-align:center;
+    margin-top:30px;
+}
+
+.signup a{
+    color:#ff7b00;
+    text-decoration:none;
+    font-weight:600;
+}
+
+/* ===================
+   RESPONSIVE
+=================== */
+
+@media(max-width:1300px){
+
+.container{
+    grid-template-columns:1fr;
+}
+
+.left{
+    min-height:800px;
+}
+
+.center{
+    min-height:100vh;
+}
+
+.right{
+    min-height:100vh;
+}
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- LEFT -->
+
+    <div class="left">
+
+        <div class="logo">MY LIFE</div>
+
+        <img src="images/brain.png" class="brain">
+
+        <div class="highlight">
+            <span>Thesis paper's</span>
+        </div>
+
+        <div class="profile-box">
+
+            <img src="images/profile.jpg" class="profile-img">
+
+            <h1>Hello.</h1>
+
+            <p>
+                My name is Akira Lee and I write about my life,
+                travels and music.
+            </p>
+
+            <div class="socials">
+                <button class="fb">Facebook</button>
+                <button class="tw">Twitter</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- CENTER -->
+
+    <div class="center">
+
+        <div class="menu">☰</div>
+
+        <div class="card">
+
+            <div class="card-image">
+                <img src="images/travel.jpg">
+                <div class="badge travel">Travel</div>
+            </div>
+
+            <div class="card-content">
+                <h2>
+                    I will be traveling to Nepal
+                    for the second time this year
+                </h2>
+
+                <p>
+                    Explore ideas, research papers and
+                    academic resources in one place.
+                </p>
+
+                <div class="read">
+                    <a href="#">Read More</a>
+                    <span class="arrow">→</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-image">
+                <img src="images/coffee.jpg">
+                <div class="badge life">Lifestyle</div>
+            </div>
+
+            <div class="card-content">
+                <h2>
+                    Research Papers &
+                    Academic Resources
+                </h2>
+
+                <p>
+                    Discover thousands of papers from
+                    top universities around the world.
+                </p>
+
+                <div class="read">
+                    <a href="#">Read More</a>
+                    <span class="arrow">→</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-image">
+                <img src="images/music.jpg">
+                <div class="badge music">Music</div>
+            </div>
+
+            <div class="card-content">
+                <h2>
+                    Finding peace in every
+                    melody I hear
+                </h2>
+
+                <p>
+                    Modern thesis explorer with AI
+                    powered search and recommendations.
+                </p>
+
+                <div class="read">
+                    <a href="#">Read More</a>
+                    <span class="arrow">→</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- RIGHT -->
+
+    <div class="right">
+
+        <div class="login-box">
+
+            <h1>Welcome back!</h1>
+
+            <p>
+                Login to continue your journey
+                with Thesis Papers.
+            </p>
+
+            <input
+            type="email"
+            class="input"
+            placeholder="Email address">
+
+            <input
+            type="password"
+            class="input"
+            placeholder="Password">
+
+            <div class="options">
+                <label>
+                    <input type="checkbox">
+                    Remember me
+                </label>
+
+                <a href="#">Forgot password?</a>
+            </div>
+
+            <button class="login-btn">
+                Log In
+            </button>
+
+            <div class="divider">
+                or continue with
+            </div>
+
+            <button class="social-btn">
+                Continue with Google
+            </button>
+
+            <button class="social-btn">
+                Continue with Facebook
+            </button>
+
+            <button class="social-btn guest">
+                Watch as a Guest
+            </button>
+
+            <div class="signup">
+                Don't have an account?
+                <a href="#">Sign Up</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+document.querySelector(".login-btn")
+.addEventListener("click",()=>{
+
+    const email =
+    document.querySelector(
+    'input[type="email"]'
+    ).value;
+
+    if(email===""){
+        alert("Please enter email");
+        return;
+    }
+
+    alert("Login functionality connected!");
+});
+
+</script>
+
+</body>
+</html>
