@@ -1,1634 +1,742 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="bn">
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>Thesis Papers</title>
-
-    <!-- Google Font -->
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-          rel="stylesheet">
-
-
-    <style>
-
-        /* =========================================
-           GLOBAL
-        ========================================= */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
-
-        html,
-        body {
-            width: 100%;
-            height: 100%;
-        }
-
-
-        body {
-            background: #f7f4ef;
-            overflow: hidden;
-        }
-
-
-        button,
-        input {
-            font-family: inherit;
-        }
-
-
-        button {
-            cursor: pointer;
-        }
-
-
-        /* =========================================
-           MAIN CONTAINER
-        ========================================= */
-
-        .container {
-
-            width: 100%;
-            height: 100vh;
-
-            display: grid;
-
-            grid-template-columns:
-                36%
-                34%
-                30%;
-
-            overflow: hidden;
-        }
-
-
-        /* =========================================
-           LEFT HERO SECTION
-        ========================================= */
-
-        .left {
-
-            position: relative;
-
-            width: 100%;
-            height: 100vh;
-
-            overflow: hidden;
-
-            background:
-                linear-gradient(
-                    rgba(0, 0, 0, 0.12),
-                    rgba(0, 0, 0, 0.72)
-                ),
-                url("images/paper-bg.jpg");
-
-            background-size: cover;
-            background-position: center;
-        }
-
-
-        /* Logo */
-
-        .logo {
-
-            position: absolute;
-
-            top: 28px;
-            left: 32px;
-
-            z-index: 10;
-
-            color: #111;
-
-            font-size: 21px;
-            font-weight: 800;
-
-            letter-spacing: 1px;
-
-            text-transform: uppercase;
-
-            border-bottom:
-                3px solid #111;
-
-            padding-bottom: 3px;
-        }
-
-
-        /* Brain */
-
-        .brain {
-
-            position: absolute;
-
-            width: 330px;
-
-            top: 62px;
-            left: 15px;
-
-            z-index: 2;
-
-            object-fit: contain;
-
-            filter:
-                drop-shadow(
-                    0 15px 25px
-                    rgba(0,0,0,.18)
-                );
-        }
-
-
-        /* Thesis title */
-
-        .highlight {
-
-            position: absolute;
-
-            left: 60px;
-            top: 350px;
-
-            z-index: 5;
-
-            color: #111;
-
-            font-family: Georgia, serif;
-
-            font-size: 42px;
-
-            font-weight: 700;
-
-            line-height: 1.05;
-
-            transform: rotate(-7deg);
-        }
-
-
-        .highlight span {
-
-            display: inline-block;
-
-            background: #4657ff;
-
-            color: #050505;
-
-            padding:
-                5px 14px 7px;
-
-            box-shadow:
-                5px 5px 0
-                rgba(0,0,0,.12);
-        }
-
-
-        /* =========================================
-           PROFILE
-        ========================================= */
-
-        .profile-box {
-
-            position: absolute;
-
-            left: 35px;
-            bottom: 28px;
-
-            z-index: 10;
-
-            color: white;
-
-            max-width: 350px;
-        }
-
-
-        .profile-img {
-
-            width: 68px;
-            height: 68px;
-
-            object-fit: cover;
-
-            border-radius: 50%;
-
-            border:
-                4px solid
-                rgba(255,255,255,.35);
-
-            margin-bottom: 8px;
-        }
-
-
-        .profile-box h1 {
-
-            font-size: 46px;
-
-            font-weight: 700;
-
-            line-height: 1;
-
-            margin-bottom: 8px;
-        }
-
-
-        .profile-box p {
-
-            max-width: 320px;
-
-            color:
-                rgba(255,255,255,.86);
-
-            font-size: 13px;
-
-            line-height: 1.65;
-        }
-
-
-        /* Social buttons */
-
-        .socials {
-
-            display: flex;
-
-            gap: 10px;
-
-            margin-top: 15px;
-        }
-
-
-        .socials button {
-
-            border: none;
-
-            color: white;
-
-            padding:
-                9px 18px;
-
-            border-radius: 7px;
-
-            font-size: 12px;
-
-            font-weight: 600;
-
-            transition:
-                transform .25s ease,
-                opacity .25s ease;
-        }
-
-
-        .socials button:hover {
-
-            transform:
-                translateY(-2px);
-
-            opacity: .9;
-        }
-
-
-        .fb {
-            background: #173f88;
-        }
-
-
-        .tw {
-            background: #11a8ff;
-        }
-
-
-        /* =========================================
-           CENTER RESEARCH SECTION
-        ========================================= */
-
-        .center {
-
-            position: relative;
-
-            width: 100%;
-            height: 100vh;
-
-            padding:
-                18px 20px;
-
-            background: #f5f1eb;
-
-            overflow-y: auto;
-
-            scrollbar-width: thin;
-
-            scrollbar-color:
-                #c9c2b8
-                transparent;
-        }
-
-
-        /* Chrome scrollbar */
-
-        .center::-webkit-scrollbar {
-            width: 5px;
-        }
-
-
-        .center::-webkit-scrollbar-track {
-            background: transparent;
-        }
-
-
-        .center::-webkit-scrollbar-thumb {
-
-            background: #c9c2b8;
-
-            border-radius: 20px;
-        }
-
-
-        /* Menu */
-
-        .menu {
-
-            width: 100%;
-
-            display: flex;
-
-            justify-content: flex-end;
-
-            align-items: center;
-
-            margin-bottom: 12px;
-        }
-
-
-        .menu button {
-
-            width: 38px;
-            height: 38px;
-
-            border: none;
-
-            border-radius: 50%;
-
-            background: white;
-
-            box-shadow:
-                0 5px 15px
-                rgba(0,0,0,.08);
-
-            font-size: 19px;
-
-            transition:
-                transform .25s ease;
-        }
-
-
-        .menu button:hover {
-
-            transform:
-                rotate(90deg);
-        }
-
-
-        /* =========================================
-           RESEARCH CARD
-        ========================================= */
-
-        .card {
-
-            width: 100%;
-
-            background: white;
-
-            border-radius: 16px;
-
-            overflow: hidden;
-
-            margin-bottom: 16px;
-
-            box-shadow:
-                0 8px 25px
-                rgba(0,0,0,.07);
-
-            transition:
-                transform .3s ease,
-                box-shadow .3s ease;
-        }
-
-
-        .card:hover {
-
-            transform:
-                translateY(-4px);
-
-            box-shadow:
-                0 15px 35px
-                rgba(0,0,0,.11);
-        }
-
-
-        /* Card image */
-
-        .card-image {
-
-            position: relative;
-
-            width: 100%;
-
-            height: 145px;
-
-            overflow: hidden;
-        }
-
-
-        .card-image img {
-
-            width: 100%;
-            height: 100%;
-
-            display: block;
-
-            object-fit: cover;
-
-            transition:
-                transform .5s ease;
-        }
-
-
-        .card:hover
-        .card-image img {
-
-            transform:
-                scale(1.05);
-        }
-
-
-        /* Badge */
-
-        .badge {
-
-            position: absolute;
-
-            top: 12px;
-            right: 12px;
-
-            color: white;
-
-            font-size: 10px;
-
-            font-weight: 600;
-
-            padding:
-                6px 11px;
-
-            border-radius: 30px;
-
-            backdrop-filter:
-                blur(8px);
-        }
-
-
-        .travel {
-            background: #00a98f;
-        }
-
-
-        .life {
-            background: #e99a00;
-        }
-
-
-        .music {
-            background: #7045e8;
-        }
-
-
-        /* Card content */
-
-        .card-content {
-
-            padding:
-                15px 17px 14px;
-        }
-
-
-        .card-content h2 {
-
-            color: #172033;
-
-            font-size: 19px;
-
-            font-weight: 700;
-
-            line-height: 1.3;
-
-            margin-bottom: 7px;
-        }
-
-
-        .card-content p {
-
-            color: #777;
-
-            font-size: 12px;
-
-            line-height: 1.55;
-        }
-
-
-        /* Read */
-
-        .read {
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content:
-                space-between;
-
-            margin-top: 10px;
-        }
-
-
-        .read a {
-
-            color: #202020;
-
-            text-decoration: none;
-
-            font-size: 12px;
-
-            font-weight: 600;
-        }
-
-
-        .read a:hover {
-            color: #4657ff;
-        }
-
-
-        .arrow {
-
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            width: 28px;
-            height: 28px;
-
-            border-radius: 50%;
-
-            background: #f3f1ed;
-
-            font-size: 17px;
-
-            transition:
-                transform .25s ease,
-                background .25s ease;
-        }
-
-
-        .card:hover .arrow {
-
-            transform:
-                translateX(3px);
-
-            background: #4657ff;
-
-            color: white;
-        }
-
-
-        /* =========================================
-           RIGHT LOGIN SECTION
-        ========================================= */
-
-        .right {
-
-            width: 100%;
-            height: 100vh;
-
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            padding:
-                25px 35px;
-
-            background: #fbf8f4;
-
-            overflow: hidden;
-        }
-
-
-        .login-box {
-
-            width: 100%;
-
-            max-width: 380px;
-        }
-
-
-        /* Heading */
-
-        .login-box h1 {
-
-            color: #172033;
-
-            font-size: 40px;
-
-            font-weight: 700;
-
-            line-height: 1.1;
-
-            margin-bottom: 9px;
-        }
-
-
-        .login-box > p {
-
-            color: #777;
-
-            font-size: 13px;
-
-            line-height: 1.65;
-
-            margin-bottom: 22px;
-        }
-
-
-        /* Input */
-
-        .input {
-
-            width: 100%;
-
-            height: 48px;
-
-            padding:
-                0 15px;
-
-            outline: none;
-
-            border:
-                1px solid #ddd7cf;
-
-            border-radius: 10px;
-
-            background: white;
-
-            color: #222;
-
-            font-size: 13px;
-
-            margin-bottom: 11px;
-
-            transition:
-                border .25s ease,
-                box-shadow .25s ease;
-        }
-
-
-        .input:focus {
-
-            border-color:
-                #4657ff;
-
-            box-shadow:
-                0 0 0 3px
-                rgba(70,87,255,.10);
-        }
-
-
-        /* Options */
-
-        .options {
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content:
-                space-between;
-
-            margin:
-                7px 0 15px;
-
-            font-size: 11px;
-
-            color: #777;
-        }
-
-
-        .options label {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 5px;
-
-            cursor: pointer;
-        }
-
-
-        .options input {
-
-            accent-color:
-                #4657ff;
-        }
-
-
-        .options a {
-
-            color: #4657ff;
-
-            text-decoration: none;
-
-            font-weight: 500;
-        }
-
-
-        /* Main Login */
-
-        .login-btn {
-
-            width: 100%;
-
-            height: 48px;
-
-            border: none;
-
-            border-radius: 10px;
-
-            color: white;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #0a1730,
-                    #071120
-                );
-
-            font-size: 14px;
-
-            font-weight: 600;
-
-            transition:
-                transform .25s ease,
-                box-shadow .25s ease;
-        }
-
-
-        .login-btn:hover {
-
-            transform:
-                translateY(-2px);
-
-            box-shadow:
-                0 10px 25px
-                rgba(7,17,32,.2);
-        }
-
-
-        /* Divider */
-
-        .divider {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 10px;
-
-            color: #aaa;
-
-            font-size: 11px;
-
-            margin: 17px 0;
-        }
-
-
-        .divider::before,
-        .divider::after {
-
-            content: "";
-
-            flex: 1;
-
-            height: 1px;
-
-            background: #e5e0d9;
-        }
-
-
-        /* Social buttons */
-
-        .social-btn {
-
-            width: 100%;
-
-            height: 43px;
-
-            border:
-                1px solid #ddd7cf;
-
-            border-radius: 9px;
-
-            background: white;
-
-            color: #333;
-
-            font-size: 12px;
-
-            font-weight: 500;
-
-            margin-bottom: 9px;
-
-            transition:
-                background .25s ease,
-                transform .25s ease;
-        }
-
-
-        .social-btn:hover {
-
-            background: #f8f6f2;
-
-            transform:
-                translateY(-1px);
-        }
-
-
-        /* Guest */
-
-        .guest {
-
-            border:
-                1px solid #f1a33b;
-
-            color: #e58b15;
-
-            margin-top: 2px;
-        }
-
-
-        .guest:hover {
-
-            background:
-                #fff8ed;
-        }
-
-
-        /* Signup */
-
-        .signup {
-
-            text-align: center;
-
-            color: #888;
-
-            font-size: 11px;
-
-            margin-top: 17px;
-        }
-
-
-        .signup a {
-
-            color: #ff7b00;
-
-            text-decoration: none;
-
-            font-weight: 600;
-        }
-
-
-        /* =========================================
-           TABLET
-        ========================================= */
-
-        @media (max-width: 1100px) {
-
-            body {
-                overflow: auto;
-            }
-
-
-            .container {
-
-                height: auto;
-
-                min-height: 100vh;
-
-                grid-template-columns:
-                    1fr 1fr;
-            }
-
-
-            .left {
-
-                height: 700px;
-            }
-
-
-            .center {
-
-                height: 700px;
-            }
-
-
-            .right {
-
-                grid-column:
-                    1 / -1;
-
-                height: 650px;
-            }
-        }
-
-
-        /* =========================================
-           MOBILE
-        ========================================= */
-
-        @media (max-width: 700px) {
-
-            body {
-                overflow: auto;
-            }
-
-
-            .container {
-
-                display: block;
-
-                height: auto;
-            }
-
-
-            .left {
-
-                height: 650px;
-            }
-
-
-            .brain {
-
-                width: 280px;
-
-                left: 50%;
-
-                transform:
-                    translateX(-50%);
-            }
-
-
-            .highlight {
-
-                left: 35px;
-
-                top: 340px;
-
-                font-size: 34px;
-            }
-
-
-            .profile-box {
-
-                left: 25px;
-
-                bottom: 25px;
-            }
-
-
-            .center {
-
-                height: auto;
-
-                overflow: visible;
-
-                padding: 18px;
-            }
-
-
-            .card-image {
-
-                height: 190px;
-            }
-
-
-            .right {
-
-                height: auto;
-
-                min-height: 600px;
-
-                padding: 35px 22px;
-            }
-
-
-            .login-box h1 {
-
-                font-size: 36px;
-            }
-        }
-
-    </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Life — Travel, Lifestyle &amp; Music Journal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#151313;
+    --paper:#f4efe6;
+    --paper-dim:#eae3d6;
+    --rust:#c2542d;
+    --rust-deep:#a8431f;
+    --sage:#57786b;
+    --gold:#d69a3e;
+    --violet:#7a5aa3;
+    --line:#d9d0bf;
+    --shadow:0 24px 48px -24px rgba(21,19,19,.35);
+    --radius:14px;
+    --serif:"Fraunces", Georgia, serif;
+    --sans:"Inter", -apple-system, sans-serif;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    font-family:var(--sans);
+    color:var(--ink);
+    background:var(--paper);
+    min-height:100vh;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .layout{
+    display:grid;
+    grid-template-columns:minmax(0,1.55fr) minmax(340px,0.85fr);
+    min-height:100vh;
+  }
+
+  /* ============ LEFT: JOURNAL PANEL ============ */
+  .journal{
+    position:relative;
+    background:
+      radial-gradient(ellipse 120% 90% at 15% 20%, rgba(194,84,45,.28), transparent 55%),
+      linear-gradient(155deg, #d8cdb8 0%, #46433d 42%, #17140f 100%);
+    overflow:hidden;
+    padding:2.6rem 2.6rem 2.4rem;
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+  }
+
+  .journal::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+      repeating-linear-gradient(0deg, rgba(255,255,255,.02) 0 1px, transparent 1px 3px);
+    mix-blend-mode:overlay;
+    pointer-events:none;
+  }
+
+  .journal-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    position:relative;
+    z-index:3;
+  }
+
+  .brand{
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:1.6rem;
+    letter-spacing:.02em;
+    color:#f6f1e6;
+    text-decoration:none;
+    border-bottom:3px solid var(--rust);
+    padding-bottom:.15rem;
+  }
+
+  .menu-btn{
+    width:42px;height:42px;
+    border-radius:50%;
+    border:1px solid rgba(246,241,230,.35);
+    background:rgba(246,241,230,.06);
+    color:#f6f1e6;
+    display:flex;align-items:center;justify-content:center;
+    cursor:pointer;
+    transition:background .2s ease, transform .2s ease;
+  }
+  .menu-btn:hover{background:rgba(246,241,230,.16); transform:translateY(-1px);}
+  .menu-btn svg{width:18px;height:18px;}
+
+  .brain-wrap{
+    position:absolute;
+    left:-2%;
+    top:6%;
+    width:52%;
+    max-width:480px;
+    z-index:1;
+    opacity:.94;
+    filter:drop-shadow(0 30px 40px rgba(0,0,0,.45));
+  }
+  .brain-wrap svg{width:100%;height:auto;display:block;}
+
+  .thesis-text{
+    position:absolute;
+    left:2%;
+    top:33%;
+    width:56%;
+    z-index:1;
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:2.2rem;
+    line-height:1.25;
+    color:rgba(245,239,224,.9);
+    pointer-events:none;
+  }
+  .thesis-text mark{
+    background:linear-gradient(100deg, transparent 0%, transparent 3%, #4d6fb8 3%, #4d6fb8 97%, transparent 97%);
+    color:#fff;
+    padding:0 .15rem;
+    font-weight:600;
+    font-style:normal;
+  }
+
+  .author-block{
+    position:relative;
+    z-index:3;
+    margin-top:auto;
+    display:flex;
+    flex-direction:column;
+    gap:1.1rem;
+    max-width:420px;
+  }
+
+  .author-avatar{
+    width:64px;height:64px;
+    border-radius:50%;
+    border:3px solid var(--gold);
+    object-fit:cover;
+    background:#333;
+  }
+
+  .author-block h1{
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:2.1rem;
+    color:#f6f1e6;
+    line-height:1.1;
+  }
+
+  .author-block p{
+    color:rgba(246,241,230,.78);
+    font-size:1rem;
+    line-height:1.55;
+    max-width:340px;
+  }
+
+  .socials{
+    display:flex;
+    gap:.7rem;
+  }
+  .social-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:.5rem;
+    padding:.6rem 1.1rem;
+    border-radius:8px;
+    font-size:.88rem;
+    font-weight:600;
+    text-decoration:none;
+    border:1px solid transparent;
+    transition:filter .2s ease, transform .2s ease;
+  }
+  .social-btn:hover{ filter:brightness(1.1); transform:translateY(-2px); }
+  .social-btn svg{width:16px;height:16px;flex-shrink:0;}
+  .social-btn.fb{ background:#1c2f4f; color:#fff; }
+  .social-btn.tw{ background:#1e9be0; color:#fff; }
+
+  /* ============ POST CARDS STACK ============ */
+  .posts{
+    position:relative;
+    z-index:3;
+    align-self:flex-end;
+    margin-left:auto;
+    display:flex;
+    flex-direction:column;
+    gap:1.15rem;
+    width:min(360px, 100%);
+    max-height:calc(100vh - 6rem);
+    overflow-y:auto;
+    padding-right:.3rem;
+    padding-top:.5rem;
+    scrollbar-width:thin;
+    scrollbar-color:rgba(246,241,230,.3) transparent;
+  }
+  .posts::-webkit-scrollbar{width:5px;}
+  .posts::-webkit-scrollbar-thumb{background:rgba(246,241,230,.25); border-radius:4px;}
+
+  .post-card{
+    background:var(--paper);
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    transition:transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease;
+    flex-shrink:0;
+  }
+  .post-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 32px 56px -20px rgba(0,0,0,.5);
+  }
+
+  .post-media{
+    position:relative;
+    height:158px;
+    background-size:cover;
+    background-position:center;
+  }
+  .post-media::after{
+    content:"";
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(10,10,10,.55) 0%, rgba(10,10,10,0) 45%, rgba(10,10,10,.1) 100%);
+  }
+
+  .post-author{
+    position:absolute;
+    top:.85rem; left:.85rem;
+    display:flex;
+    align-items:center;
+    gap:.55rem;
+    z-index:2;
+  }
+  .post-author img{
+    width:36px;height:36px;
+    border-radius:50%;
+    border:2px solid var(--gold);
+    object-fit:cover;
+  }
+  .post-author-name{ color:#fff; font-size:.85rem; font-weight:600; line-height:1.2;}
+  .post-author-date{ color:rgba(255,255,255,.75); font-size:.72rem; }
+
+  .post-tag{
+    position:absolute;
+    top:.85rem; right:.85rem;
+    z-index:2;
+    font-size:.72rem;
+    font-weight:600;
+    padding:.3rem .7rem;
+    border-radius:20px;
+    color:#fff;
+  }
+  .post-tag.travel{ background:var(--sage); }
+  .post-tag.lifestyle{ background:var(--gold); color:#2b1c04;}
+  .post-tag.music{ background:var(--violet); }
+
+  .post-body{ padding:1.1rem 1.15rem 1.25rem; }
+  .post-body h3{
+    font-family:var(--serif);
+    font-size:1.14rem;
+    font-weight:600;
+    line-height:1.3;
+    margin-bottom:.5rem;
+  }
+  .post-body p{
+    font-size:.86rem;
+    color:#615a4d;
+    line-height:1.5;
+    margin-bottom:.85rem;
+  }
+
+  .read-more{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .read-more a{
+    font-size:.84rem;
+    font-weight:600;
+    color:var(--ink);
+    text-decoration:underline;
+    text-underline-offset:3px;
+  }
+  .read-more .arrow{
+    width:32px;height:32px;
+    border-radius:50%;
+    border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;
+    transition:background .2s ease, transform .2s ease, border-color .2s ease;
+  }
+  .post-card:hover .read-more .arrow{
+    background:var(--rust);
+    border-color:var(--rust);
+    transform:translateX(3px);
+  }
+  .read-more .arrow svg{width:14px;height:14px; stroke:var(--ink); transition:stroke .2s ease;}
+  .post-card:hover .read-more .arrow svg{ stroke:#fff; }
+
+  /* ============ RIGHT: LOGIN PANEL ============ */
+  .login-panel{
+    background:var(--paper-dim);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:3rem 2.6rem;
+  }
+
+  .login-inner{ width:100%; max-width:360px; }
+
+  .login-inner h2{
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:2.1rem;
+    margin-bottom:.5rem;
+  }
+  .login-inner > p{
+    color:#6b6355;
+    font-size:.95rem;
+    line-height:1.5;
+    margin-bottom:2.1rem;
+  }
+
+  .field{
+    position:relative;
+    margin-bottom:1rem;
+  }
+  .field svg.icon-left{
+    position:absolute; left:1rem; top:50%; transform:translateY(-50%);
+    width:18px;height:18px; stroke:#8a8375; pointer-events:none;
+  }
+  .field input{
+    width:100%;
+    padding:.95rem 1rem .95rem 2.85rem;
+    border:1px solid var(--line);
+    border-radius:10px;
+    background:#fbf9f4;
+    font-family:var(--sans);
+    font-size:.92rem;
+    color:var(--ink);
+    outline:none;
+    transition:border-color .2s ease, box-shadow .2s ease;
+  }
+  .field input::placeholder{ color:#9a9282; }
+  .field input:focus{
+    border-color:var(--rust);
+    box-shadow:0 0 0 3px rgba(194,84,45,.15);
+  }
+
+  .toggle-pass{
+    position:absolute; right:.9rem; top:50%; transform:translateY(-50%);
+    background:none; border:none; cursor:pointer;
+    width:22px;height:22px;
+    display:flex;align-items:center;justify-content:center;
+    color:#8a8375;
+  }
+  .toggle-pass svg{width:18px;height:18px;}
+
+  .row-between{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin:1.1rem 0 1.5rem;
+    font-size:.86rem;
+  }
+  .remember{
+    display:flex;
+    align-items:center;
+    gap:.55rem;
+    color:#4c4638;
+    cursor:pointer;
+    user-select:none;
+  }
+  .remember input{
+    width:17px;height:17px;
+    accent-color:var(--rust);
+    cursor:pointer;
+  }
+  .row-between a{
+    color:#4c4638;
+    text-decoration:underline;
+    text-underline-offset:3px;
+  }
+
+  .btn-primary{
+    width:100%;
+    padding:1rem;
+    background:var(--ink);
+    color:#f6f1e6;
+    border:none;
+    border-radius:10px;
+    font-family:var(--sans);
+    font-size:.98rem;
+    font-weight:600;
+    cursor:pointer;
+    transition:background .2s ease, transform .15s ease;
+  }
+  .btn-primary:hover{ background:#2c2724; transform:translateY(-1px); }
+  .btn-primary:active{ transform:translateY(0); }
+
+  .divider{
+    display:flex;
+    align-items:center;
+    gap:.9rem;
+    margin:1.6rem 0;
+    color:#a49c8b;
+    font-size:.82rem;
+  }
+  .divider::before, .divider::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:var(--line);
+  }
+
+  .btn-social{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:.7rem;
+    padding:.85rem;
+    border:1px solid var(--line);
+    border-radius:10px;
+    background:#fbf9f4;
+    font-family:var(--sans);
+    font-size:.9rem;
+    font-weight:600;
+    color:var(--ink);
+    cursor:pointer;
+    margin-bottom:.75rem;
+    transition:border-color .2s ease, background .2s ease, transform .15s ease;
+  }
+  .btn-social:hover{ border-color:#b5ac98; background:#f4efe4; transform:translateY(-1px); }
+  .btn-social svg{width:19px;height:19px;flex-shrink:0;}
+
+  .or-sep{
+    text-align:center;
+    color:#a49c8b;
+    font-size:.82rem;
+    margin:1.4rem 0;
+  }
+
+  .btn-guest{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:.6rem;
+    padding:.85rem;
+    border:1px solid var(--rust);
+    border-radius:10px;
+    background:transparent;
+    color:var(--rust-deep);
+    font-family:var(--sans);
+    font-size:.92rem;
+    font-weight:600;
+    cursor:pointer;
+    transition:background .2s ease, transform .15s ease;
+  }
+  .btn-guest:hover{ background:rgba(194,84,45,.08); transform:translateY(-1px); }
+  .btn-guest svg{width:18px;height:18px;}
+
+  .signup-line{
+    text-align:center;
+    margin-top:1.6rem;
+    font-size:.9rem;
+    color:#6b6355;
+  }
+  .signup-line a{
+    color:var(--rust-deep);
+    font-weight:600;
+    text-decoration:none;
+  }
+  .signup-line a:hover{ text-decoration:underline; }
+
+  .error-msg{
+    display:none;
+    background:rgba(194,84,45,.1);
+    border:1px solid rgba(194,84,45,.35);
+    color:var(--rust-deep);
+    font-size:.82rem;
+    padding:.65rem .8rem;
+    border-radius:8px;
+    margin-bottom:1rem;
+  }
+  .error-msg.show{ display:block; }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 980px){
+    .layout{ grid-template-columns:1fr; }
+    .journal{ min-height:auto; padding:2.2rem 1.4rem 2rem; }
+    .brain-wrap{ width:38%; top:4%; }
+    .thesis-text{ font-size:1.4rem; width:60%; top:26%; }
+    .posts{ width:100%; margin-left:0; max-height:none; margin-top:16rem; }
+    .login-panel{ padding:2.6rem 1.4rem; }
+  }
+  @media (max-width: 560px){
+    .brain-wrap{ display:none; }
+    .thesis-text{ display:none; }
+    .posts{ margin-top:1rem; }
+    .journal-top{ margin-bottom:1rem; }
+    .author-block{ margin-top:1.5rem; }
+  }
+</style>
 </head>
-
-
 <body>
 
+<div class="layout">
 
-    <!-- =========================================
-         MAIN
-    ========================================= -->
+  <!-- ============ LEFT: JOURNAL ============ -->
+  <section class="journal">
 
-    <div class="container">
+    <div class="journal-top">
+      <a href="#" class="brand">MY LIFE</a>
+      <button class="menu-btn" aria-label="মেনু খুলুন">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      </button>
+    </div>
 
+    <!-- decorative brain illustration -->
+    <div class="brain-wrap" aria-hidden="true">
+      <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="rustGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#e07a4a"/>
+            <stop offset="100%" stop-color="#b8451f"/>
+          </linearGradient>
+          <linearGradient id="greyGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#8f8a80"/>
+            <stop offset="100%" stop-color="#4a463f"/>
+          </linearGradient>
+        </defs>
+        <path fill="url(#rustGrad)" d="M195 20c-45 0-78 22-92 52-14 3-26 15-28 32-10 6-16 18-14 32-8 10-9 25-2 36-4 14 2 30 15 38-1 15 9 29 24 33 6 13 20 21 35 20 8 10 21 15 33 12 4-3 6-8 6-13V45c0-14-1-25--77z" opacity="0"/>
+        <path fill="url(#rustGrad)" d="M188 24c-40 2-70 24-82 54-13 4-23 17-24 33-9 7-14 19-11 32-7 11-6 26 2 36-3 14 4 29 17 36 4 13 17 22 32 22 6 12 19 18 32 16 9-2 15-10 15-19V50c0-15-3-24--81z"/>
+        <path fill="url(#greyGrad)" d="M204 24c42 1 74 22 87 52 13 4 23 16 25 32 9 7 14 19 12 33 7 11 6 26-3 36 3 14-4 29-17 36-4 13-17 22-32 22-6 12-19 18-32 16-8-2-14-9-15-17-1-45-1-165-1-165 6-30 15-42 -24-45z"/>
+        <g stroke="#2b2620" stroke-width="2.5" fill="none" stroke-linecap="round" opacity=".55">
+          <path d="M120 90c10-8 24-10 34-4"/>
+          <path d="M104 130c14-6 30-4 40 6"/>
+          <path d="M96 170c16-4 32 2 40 14"/>
+          <path d="M104 210c14 2 26 12 30 24"/>
+          <path d="M126 245c10 8 24 12 36 8"/>
+          <path d="M240 90c-10-8-24-10-34-4"/>
+          <path d="M258 128c-14-6-30-4-42 6"/>
+          <path d="M268 168c-16-4-34 2-42 14"/>
+          <path d="M258 208c-14 2-28 12-32 24"/>
+          <path d="M234 244c-10 8-24 12-36 8"/>
+        </g>
+        <path d="M199 26 L199 288" stroke="#1c1912" stroke-width="3" opacity=".35"/>
+        <path d="M199 55c14 20 8 40-4 52 16 6 24 26 12 44 18 8 22 32 6 46" stroke="#1c1912" stroke-width="2" fill="none" opacity=".3"/>
+        <ellipse cx="205" cy="300" rx="30" ry="10" fill="#2b2620" opacity=".25"/>
+        <path d="M188 285c4 20 14 34 20 34s14-16 16-34" stroke="#3a352c" stroke-width="10" fill="none" stroke-linecap="round" opacity=".7"/>
+      </svg>
+    </div>
 
-        <!-- =====================================
-             LEFT
-        ====================================== -->
+    <p class="thesis-text">to be best in point of view.<br><mark>Thesis paper's</mark> search for knowledge</p>
 
-        <section class="left">
+    <!-- ============ POST STACK ============ -->
+    <div class="posts">
 
-
-            <!-- Logo -->
-
-            <div class="logo">
-                THESIS
+      <article class="post-card">
+        <div class="post-media" style="background-image:url('https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?q=80&w=800&auto=format&fit=crop')">
+          <div class="post-author">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=100&auto=format&fit=crop" alt="Akira Lee">
+            <div>
+              <div class="post-author-name">Akira Lee</div>
+              <div class="post-author-date">February 16, 2026</div>
             </div>
+          </div>
+          <span class="post-tag travel">Travel</span>
+        </div>
+        <div class="post-body">
+          <h3>I will be traveling to Nepal for the second time this year</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+          <div class="read-more">
+            <a href="#">Read more</a>
+            <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </div>
+        </div>
+      </article>
 
-
-            <!-- Brain Image -->
-
-            <img
-                src="images/brain.png"
-                alt="Brain illustration"
-                class="brain"
-            >
-
-
-            <!-- Main Title -->
-
-            <div class="highlight">
-
-                <span>
-                    Thesis Papers
-                </span>
-
+      <article class="post-card">
+        <div class="post-media" style="background-image:url('https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=800&auto=format&fit=crop')">
+          <div class="post-author">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=100&auto=format&fit=crop" alt="Akira Lee">
+            <div>
+              <div class="post-author-name">Akira Lee</div>
+              <div class="post-author-date">February 16, 2026</div>
             </div>
+          </div>
+          <span class="post-tag lifestyle">Lifestyle</span>
+        </div>
+        <div class="post-body">
+          <h3>The best coffee I simply make at home</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+          <div class="read-more">
+            <a href="#">Read more</a>
+            <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </div>
+        </div>
+      </article>
 
-
-            <!-- Profile -->
-
-            <div class="profile-box">
-
-
-                <img
-                    src="images/profile.jpg"
-                    alt="Profile"
-                    class="profile-img"
-                >
-
-
-                <h1>
-                    Hello.
-                </h1>
-
-
-                <p>
-                    A modern space for discovering,
-                    exploring and sharing research papers
-                    and academic knowledge.
-                </p>
-
-
-                <div class="socials">
-
-                    <button
-                        class="fb"
-                        onclick="openSocial('facebook')"
-                    >
-                        Facebook
-                    </button>
-
-
-                    <button
-                        class="tw"
-                        onclick="openSocial('twitter')"
-                    >
-                        Twitter
-                    </button>
-
-                </div>
-
-
+      <article class="post-card">
+        <div class="post-media" style="background-image:url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=800&auto=format&fit=crop')">
+          <div class="post-author">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=100&auto=format&fit=crop" alt="Akira Lee">
+            <div>
+              <div class="post-author-name">Akira Lee</div>
+              <div class="post-author-date">February 16, 2026</div>
             </div>
-
-
-        </section>
-
-
-        <!-- =====================================
-             CENTER
-        ====================================== -->
-
-        <main class="center">
-
-
-            <!-- Menu -->
-
-            <div class="menu">
-
-                <button
-                    onclick="toggleMenu()"
-                    aria-label="Menu"
-                >
-                    ☰
-                </button>
-
-            </div>
-
-
-            <!-- =================================
-                 CARD 01
-            ================================== -->
-
-            <article class="card">
-
-
-                <div class="card-image">
-
-                    <img
-                        src="images/travel.jpg"
-                        alt="Research"
-                    >
-
-                    <div class="badge travel">
-                        Featured
-                    </div>
-
-                </div>
-
-
-                <div class="card-content">
-
-
-                    <h2>
-                        Research Papers &
-                        Academic Resources
-                    </h2>
-
-
-                    <p>
-                        Explore valuable research,
-                        academic papers and new ideas
-                        from different fields.
-                    </p>
-
-
-                    <div class="read">
-
-                        <a href="#">
-                            Read More
-                        </a>
-
-
-                        <span class="arrow">
-                            →
-                        </span>
-
-                    </div>
-
-
-                </div>
-
-
-            </article>
-
-
-            <!-- =================================
-                 CARD 02
-            ================================== -->
-
-            <article class="card">
-
-
-                <div class="card-image">
-
-                    <img
-                        src="images/coffee.jpg"
-                        alt="Academic research"
-                    >
-
-                    <div class="badge life">
-                        Research
-                    </div>
-
-                </div>
-
-
-                <div class="card-content">
-
-
-                    <h2>
-                        Discover New Academic
-                        Ideas & Innovations
-                    </h2>
-
-
-                    <p>
-                        Find interesting papers,
-                        innovative concepts and
-                        useful academic resources.
-                    </p>
-
-
-                    <div class="read">
-
-                        <a href="#">
-                            Read More
-                        </a>
-
-
-                        <span class="arrow">
-                            →
-                        </span>
-
-                    </div>
-
-
-                </div>
-
-
-            </article>
-
-
-            <!-- =================================
-                 CARD 03
-            ================================== -->
-
-            <article class="card">
-
-
-                <div class="card-image">
-
-                    <img
-                        src="images/music.jpg"
-                        alt="Knowledge"
-                    >
-
-                    <div class="badge music">
-                        Knowledge
-                    </div>
-
-                </div>
-
-
-                <div class="card-content">
-
-
-                    <h2>
-                        Explore Knowledge &
-                        Build Your Ideas
-                    </h2>
-
-
-                    <p>
-                        Turn research into knowledge
-                        and transform knowledge into
-                        meaningful ideas.
-                    </p>
-
-
-                    <div class="read">
-
-                        <a href="#">
-                            Read More
-                        </a>
-
-
-                        <span class="arrow">
-                            →
-                        </span>
-
-                    </div>
-
-
-                </div>
-
-
-            </article>
-
-
-        </main>
-
-
-        <!-- =====================================
-             RIGHT LOGIN
-        ====================================== -->
-
-        <aside class="right">
-
-
-            <div class="login-box">
-
-
-                <h1>
-                    Welcome back!
-                </h1>
-
-
-                <p>
-                    Login to continue your journey
-                    with Thesis Papers.
-                </p>
-
-
-                <!-- Email -->
-
-                <input
-                    type="email"
-                    class="input"
-                    id="email"
-                    placeholder="Email address"
-                    autocomplete="email"
-                >
-
-
-                <!-- Password -->
-
-                <input
-                    type="password"
-                    class="input"
-                    id="password"
-                    placeholder="Password"
-                    autocomplete="current-password"
-                >
-
-
-                <!-- Options -->
-
-                <div class="options">
-
-
-                    <label>
-
-                        <input
-                            type="checkbox"
-                            id="remember"
-                        >
-
-                        Remember me
-
-                    </label>
-
-
-                    <a
-                        href="#"
-                        onclick="forgotPassword(event)"
-                    >
-                        Forgot password?
-                    </a>
-
-
-                </div>
-
-
-                <!-- Login -->
-
-                <button
-                    class="login-btn"
-                    onclick="loginUser()"
-                >
-                    Log In
-                </button>
-
-
-                <!-- Divider -->
-
-                <div class="divider">
-                    or continue with
-                </div>
-
-
-                <!-- Google -->
-
-                <button
-                    class="social-btn"
-                    onclick="socialLogin('Google')"
-                >
-                    Continue with Google
-                </button>
-
-
-                <!-- Facebook -->
-
-                <button
-                    class="social-btn"
-                    onclick="socialLogin('Facebook')"
-                >
-                    Continue with Facebook
-                </button>
-
-
-                <!-- Guest -->
-
-                <button
-                    class="social-btn guest"
-                    onclick="guestLogin()"
-                >
-                    Watch as a Guest
-                </button>
-
-
-                <!-- Signup -->
-
-                <div class="signup">
-
-                    Don't have an account?
-
-                    <a
-                        href="#"
-                        onclick="signup(event)"
-                    >
-                        Sign Up
-                    </a>
-
-                </div>
-
-
-            </div>
-
-
-        </aside>
-
+          </div>
+          <span class="post-tag music">Music</span>
+        </div>
+        <div class="post-body">
+          <h3>Finding peace in every melody I hear</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+          <div class="read-more">
+            <a href="#">Read more</a>
+            <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </div>
+        </div>
+      </article>
 
     </div>
 
+    <div class="author-block">
+      <img class="author-avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop" alt="Akira Lee এর ছবি">
+      <div>
+        <h1>Hello.</h1>
+        <p>My name is Akira Lee and I write about my life, travels and music.</p>
+      </div>
+      <div class="socials">
+        <a href="#" class="social-btn fb"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg> Facebook</a>
+        <a href="#" class="social-btn tw"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 5.9c-.7.3-1.5.6-2.4.7.8-.5 1.5-1.3 1.8-2.3-.8.5-1.7.8-2.6 1a4.2 4.2 0 0 0-7.1 3.8A11.8 11.8 0 0 1 3.1 4.9a4.2 4.2 0 0 0 1.3 5.6c-.7 0-1.3-.2-1.9-.5v.1c0 2 1.4 3.7 3.3 4.1-.6.1-1.2.2-1.8.1.5 1.7 2 2.9 3.9 2.9A8.4 8.4 0 0 1 2 18.9a11.9 11.9 0 0 0 6.4 1.9c7.7 0 11.9-6.4 11.9-11.9v-.5c.8-.6 1.5-1.3 2.1-2.2-.7.3-1.5.6-2.4.7z"/></svg> Twitter</a>
+      </div>
+    </div>
 
+  </section>
 
-    <!-- =========================================
-         JAVASCRIPT
-    ========================================= -->
+  <!-- ============ RIGHT: LOGIN ============ -->
+  <section class="login-panel">
+    <div class="login-inner">
+      <h2>Welcome back!</h2>
+      <p>Login to continue your journey with Akira Lee.</p>
 
-    <script>
+      <div class="error-msg" id="errorMsg">সঠিক ইমেইল ও পাসওয়ার্ড দিন।</div>
 
+      <form id="loginForm" novalidate>
+        <div class="field">
+          <svg class="icon-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/><path d="m3 6 9 7 9-7"/></svg>
+          <input type="email" id="email" placeholder="Email address" autocomplete="username" required>
+        </div>
 
-        /* =====================================
-           LOGIN
-        ====================================== */
+        <div class="field">
+          <svg class="icon-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+          <input type="password" id="password" placeholder="Password" autocomplete="current-password" required>
+          <button type="button" class="toggle-pass" id="togglePass" aria-label="পাসওয়ার্ড দেখান">
+            <svg id="eyeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+          </button>
+        </div>
 
-        function loginUser() {
+        <div class="row-between">
+          <label class="remember">
+            <input type="checkbox" id="remember">
+            Remember me
+          </label>
+          <a href="#">Forgot password?</a>
+        </div>
 
-            const email =
-                document.getElementById("email").value.trim();
+        <button type="submit" class="btn-primary">Log In</button>
+      </form>
 
-            const password =
-                document.getElementById("password").value.trim();
+      <div class="divider">or continue with</div>
 
+      <button type="button" class="btn-social">
+        <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.7-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z"/><path fill="#34A853" d="M12 24c3.2 0 6-1.1 7.9-2.9l-3.9-3c-1.1.7-2.4 1.1-4 1.1-3.1 0-5.7-2.1-6.6-4.9H1.4v3.1C3.3 21.3 7.3 24 12 24z"/><path fill="#FBBC05" d="M5.4 14.3c-.2-.7-.4-1.5-.4-2.3s.1-1.6.4-2.3V6.6H1.4A12 12 0 0 0 0 12c0 1.9.5 3.8 1.4 5.4l4-3.1z"/><path fill="#EA4335" d="M12 4.8c1.7 0 3.3.6 4.5 1.8l3.4-3.4C17.9 1.2 15.2 0 12 0 7.3 0 3.3 2.7 1.4 6.6l4 3.1C6.3 6.9 8.9 4.8 12 4.8z"/></svg>
+        Continue with Google
+      </button>
+      <button type="button" class="btn-social">
+        <svg viewBox="0 0 24 24" fill="#1877F2"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
+        Continue with Facebook
+      </button>
 
-            if (email === "") {
+      <div class="or-sep">or</div>
 
-                alert(
-                    "Please enter your email address."
-                );
+      <button type="button" class="btn-guest" id="guestBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 14h4"/></svg>
+        Watch as a guest
+      </button>
 
-                document
-                    .getElementById("email")
-                    .focus();
+      <p class="signup-line">Don't have an account? <a href="#">Sign up</a></p>
+    </div>
+  </section>
 
-                return;
-            }
+</div>
 
+<script>
+  // Password show/hide toggle
+  const toggleBtn = document.getElementById('togglePass');
+  const passInput = document.getElementById('password');
+  const eyeIcon = document.getElementById('eyeIcon');
 
-            if (password === "") {
+  toggleBtn.addEventListener('click', () => {
+    const isHidden = passInput.type === 'password';
+    passInput.type = isHidden ? 'text' : 'password';
+    eyeIcon.innerHTML = isHidden
+      ? '<path d="M17.9 17.9A10.6 10.6 0 0 1 12 19c-7 0-11-7-11-7a20.3 20.3 0 0 1 4.2-5.2M9.9 4.2A10.6 10.6 0 0 1 12 4c7 0 11 7 11 7a20.3 20.3 0 0 1-2.6 3.6M14.1 14.1a3 3 0 1 1-4.2-4.2"/><line x1="1" y1="1" x2="23" y2="23"/>'
+      : '<path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/>';
+  });
 
-                alert(
-                    "Please enter your password."
-                );
+  // Simple client-side validation for the demo login form
+  const form = document.getElementById('loginForm');
+  const errorMsg = document.getElementById('errorMsg');
 
-                document
-                    .getElementById("password")
-                    .focus();
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('email').value.trim();
+    const password = passInput.value.trim();
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-                return;
-            }
+    if (!emailOk || password.length < 4) {
+      errorMsg.classList.add('show');
+      return;
+    }
+    errorMsg.classList.remove('show');
+    alert('Welcome back, Akira! (এটি একটি ডেমো — এখানে আসল অথেন্টিকেশন যুক্ত করুন)');
+    form.reset();
+  });
 
-
-            alert(
-                "Login functionality connected!"
-            );
-        }
-
-
-
-        /* =====================================
-           SOCIAL LOGIN
-        ====================================== */
-
-        function socialLogin(platform) {
-
-            alert(
-                "Continue with " +
-                platform +
-                " functionality will be connected here."
-            );
-        }
-
-
-
-        /* =====================================
-           GUEST LOGIN
-        ====================================== */
-
-        function guestLogin() {
-
-            alert(
-                "Welcome! You are continuing as a guest."
-            );
-        }
-
-
-
-        /* =====================================
-           SIGN UP
-        ====================================== */
-
-        function signup(event) {
-
-            event.preventDefault();
-
-            alert(
-                "Sign Up page will open here."
-            );
-        }
-
-
-
-        /* =====================================
-           FORGOT PASSWORD
-        ====================================== */
-
-        function forgotPassword(event) {
-
-            event.preventDefault();
-
-            alert(
-                "Password recovery page will open here."
-            );
-        }
-
-
-
-        /* =====================================
-           MENU
-        ====================================== */
-
-        function toggleMenu() {
-
-            alert(
-                "Navigation menu will open here."
-            );
-        }
-
-
-
-        /* =====================================
-           SOCIAL
-        ====================================== */
-
-        function openSocial(platform) {
-
-            alert(
-                "Opening " +
-                platform +
-                "..."
-            );
-        }
-
-
-    </script>
-
+  // Guest access demo action
+  document.getElementById('guestBtn').addEventListener('click', () => {
+    alert('আপনি এখন গেস্ট হিসেবে দেখছেন।');
+  });
+</script>
 
 </body>
-
 </html>
